@@ -1,43 +1,43 @@
-# # Customs Data Engine 🚀
+# Customs Data Engine 🚀
 
-A Python-powered data processing and automation engine designed to streamline JAFZA & Dubai Customs documentation workflows, invoice processing, and dual-sheet Excel generation (Website Upload & Frappe ERP Inbound).
+A Python-powered data processing and automation engine for customs invoice workflows, PDF table extraction, and Excel output generation.
 
----
+## Overview
 
-## 📌 Overview
+This project extracts invoice data from PDF documents, normalizes country values, and produces a dual-sheet Excel workbook suitable for customs website upload and ERP processing workflows.
 
-**Customs Data Engine** automates data entry and table extraction from PDF invoices using `pdfplumber`, normalizes country names into standard ISO codes, and generates structured Excel output for customs and ERP integration.
+## Features
 
----
+- PDF table extraction with `pdfplumber`
+- Basic country normalization for common invoice destinations
+- Excel workbook generation with two sheets:
+  - Website Upload
+  - Frappe ERP Inbound
+- A Streamlit web interface for uploading PDFs and downloading output
 
-## ✨ Features
+## Project files
 
-- 📄 **PDF Extraction:** Extracts invoice tables directly using `pdfplumber`.
-- 🌐 **ISO Country Normalization:** Standardizes country names into official ISO codes.
-- 📊 **Dual-Sheet Excel Output:** Automatically populates:
-  - Sheet 1: Website Upload
-  - Sheet 2: Frappe ERP Inbound
-- 💻 **Streamlit App:** Provides an interactive web UI (`app.py`) for easy document uploading and processing.
+- `app.py` – Streamlit web interface
+- `extract.py` – extraction and Excel generation logic
+- `requirements.txt` – Python dependencies
+- `.gitignore` – repo ignore rules
 
----
-
-## 📁 Key Project Files
-
-- `app.py` – Streamlit web interface for interactive invoice processing.
-- `extract.py` – CLI script for extracting invoice data.
-- `requirements.txt` – Python dependencies.
-
----
-
-## 🛠️ Setup & Installation
+## Setup
 
 ```bash
-# Clone the repository
-git clone [https://github.com/logisticsbyazeeb/customs-data-engine.git](https://github.com/logisticsbyazeeb/customs-data-engine.git)
-cd customs-data-engine
-
-# Install dependencies
+cd "c:\Users\Lenovo\OneDrive\Documents\GitHub\strectured-data-engine"
+python -m venv .venv
+.\.venv\Scripts\activate
 pip install -r requirements.txt
-
-# Run the Streamlit app
 streamlit run app.py
+```
+
+## Usage
+
+1. Start the app with `streamlit run app.py`.
+2. Upload a PDF invoice.
+3. Download the generated Excel workbook.
+
+## Notes
+
+This is a starting project structure intended to support customs invoice processing tasks. It may need further tuning depending on the exact invoice layout and ERP schema you expect to support.
