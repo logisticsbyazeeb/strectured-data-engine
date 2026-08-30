@@ -10,19 +10,19 @@ import pandas as pd
 import pdfplumber
 
 COUNTRY_CODES = {
-    "uae": "ARE",
-    "united arab emirates": "ARE",
-    "dubai": "ARE",
-    "saudi arabia": "SAU",
-    "india": "IND",
-    "china": "CHN",
-    "united states": "USA",
-    "united kingdom": "GBR",
+    "uae": "AE",
+    "united arab emirates": "AE",
+    "dubai": "AE",
+    "saudi arabia": "SA",
+    "india": "IN",
+    "china": "CN",
+    "united states": "US",
+    "united kingdom": "GB",
     "european union": "EU",
-    "japan": "JPN",
-    "singapore": "SGP",
-    "germany": "DEU",
-    "france": "FRA",
+    "japan": "JP",
+    "singapore": "SG",
+    "germany": "DE",
+    "france": "FR",
 }
 
 
