@@ -32,7 +32,7 @@ def normalize_country_name(country_name: str | None) -> str:
         return ""
 
     normalized = " ".join(value.lower().split())
-    return COUNTRY_CODES.get(normalized, value.upper()[:3])
+    return COUNTRY_CODES.get(normalized, value.upper()[:2])
 
 
 def _clean_cell(value: object) -> str:
