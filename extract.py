@@ -286,6 +286,41 @@ def generate_excel_report(data: Iterable[dict[str, str]]) -> BytesIO:
     return output
 
 
+def generate_csv_report(data: Iterable[dict[str, str]]) -> str:
+    records = list(data)
+    target_headers = [
+        "ID",
+        "Posting Date",
+        "Supplier",
+        "Invoice No",
+        "BOE NO",
+        "Total Qty",
+        "Total Gross Wt",
+        "Currency",
+        "Total Value",
+        "Status",
+    ]
+
+    csv_rows = []
+    for i, record in enumerate(records, 1):
+        row = {
+            "ID": f"JO-{i:02d}",
+            "Posting Date": record.get("Date", ""),
+            "Supplier": record.get("Supplier", ""),
+            "Invoice No": record.get("Invoice No", ""),
+            "BOE NO": "",
+            "Total Qty": "",
+            "Total Gross Wt": "",
+            "Currency": record.get("Currency", ""),
+            "Total Value": record.get("Amount", ""),
+            "Status": "Pending",
+        }
+        csv_rows.append(row)
+
+    df = pd.DataFrame(csv_rows, columns=target_headers)
+    return df.to_csv(index=False)
+
+
 if __name__ == "__main__":
     import argparse
 
