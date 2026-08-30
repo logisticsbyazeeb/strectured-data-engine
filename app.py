@@ -4,7 +4,7 @@ from pathlib import Path
 
 import streamlit as st
 
-from extract import extract_invoice_tables, generate_excel_report
+from extract import extract_invoice_tables, generate_excel_report # pyright: ignore[reportMissingImports]
 
 
 st.set_page_config(page_title="Customs Data Engine", page_icon="🚀", layout="wide")
